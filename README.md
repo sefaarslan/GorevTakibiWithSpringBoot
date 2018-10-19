@@ -12,6 +12,4 @@ Kullanıcılar kendilerine görev tanımı yapabilmek için sisteme giriş yapma
 Kullanıcı görev listesini statulerine göre görebilecektir. 
 Admin rolündeki kullanıcı sistemdeki kullanıcıları görevlerini görebilecek ve bilgileri güncelleyebilecektir. 
 
-#Projeden Birkaç Ekran Görüntüsü
-
-http://bit.ly/2CsAo9S
+#Projeden Birkaç Ekran Görüntüsü :  http://bit.ly/2CsAo9S
