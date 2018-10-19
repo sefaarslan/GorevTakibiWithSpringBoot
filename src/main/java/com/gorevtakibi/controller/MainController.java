@@ -82,7 +82,7 @@ public class MainController {
 				auth.setRole("ROLE_USER");
 				authorityService.save(auth);
 				return "redirect:/";
-			} else { // it means that this username exists
+			} else { 
 				return "redirect:/register?error";
 			} 
 		}	
