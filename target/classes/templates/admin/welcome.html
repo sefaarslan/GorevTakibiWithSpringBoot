@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Proje Takip Sistemi- Admin Panel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+
+<link rel="stylesheet" th:href="@{/css/main.css}"
+	href="../../css/main.css" />
+
+</head>
+<body>
+
+	<div class="container">
+	
+		 <h3 style="text-align:center; color: LightGray">Proje Takip Sistemi - Admin Panel
+		 </h3>
+		
+		<a th:href="@{/admin/savetask}" style="color:white; background-color:green" class="btn btn-primary">Ekle</a>
+		
+		
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Görevin Adı</th>
+					<th>Görev Açıklaması</th>
+					<th>Son Tamamlanma Tarihi</th>
+					<th>Görev Durumu</th>
+				</tr>
+			</thead>
+			 <tbody th:each="Task : ${taskList}">
+						    <tr>
+						        <td th:text="${Task.task_name}"></td>
+							<td th:text="${Task.task_statement}"></td>
+							<td th:text="${Task.task_duedate}"></td>
+							 <td th:text="${Task.task_status}"></td>
+					
+ 							<td><a th:href="@{'/admin/edittask/' +${Task.id}}" class="btn btn-primary">Düzenle</a> 
+ 							<a th:href="@{'/admin/delete/' +${Task.id}}"  style="color:white; background-color:red" class="btn btn-primary">Sil</a></td>
+ 							
+ 							</tr>					 
+					</tbody>
+		</table>
+		<div class="form-row">
+		
+		
+		<form action="#" th:action="@{/logout}" method="post">
+			<button style="color:white; background-color:gray" class="btn btn-primary" id="userFormButton"
+								type="submit">
+								Çıkış
+							</button>
+		</form>
+		<h6 id="my-header">Merhaba.."<span sec:authentication="name"></span>"(ROLE_ADMIN) Çıkış yapmak istiyorsanız,tıklayın.. </h6> 
+		
+		
+		
+							
+								
+													
+	
+	</div>
+	</div>
+
+	<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+	<script src="webjars/popper.js/1.12.5/dist/umd/popper.min.js"></script>
+	<script type="text/javascript"
+		src="webjars/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+</body>
+</html>

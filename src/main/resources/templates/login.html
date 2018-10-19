@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Proje Takip Sistemi - Giris</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+
+<link rel="stylesheet" th:href="@{/css/main.css}" href="../../css/main.css" />
+
+</head>
+<body>
+
+	<div class="container">
+		<form id="my-form" th:action="@{/login}" method="post">      
+		<div class="form-row">         
+		<div class="form-group">
+            <fieldset>
+                <legend>Giriş Ekranı</legend>
+                <div th:if="${param.error}" class="alert alert-danger">    
+                    Geçersiz kullancı adı ve parola
+                </div>
+                <div th:if="${param.logout}" class="alert alert-success"> 
+                   Başarılı çıkış yapılmıştır.
+                </div>
+                <label for="username">Kullanıcı Adı :</label>
+                <input type="text" id="username" name="username" autofocus="autofocus"/>        
+                <label for="password">Parola  : </label>
+                <input type="password" id="password" name="password"/>    
+               
+                    <button style="color:white; background-color:green" class="btn btn-primary" id="userFormButton"
+								type="submit">
+								Giriş
+							</button>
+             
+                
+            </fieldset>
+             </div>
+             </div>
+        </form>
+        <h6><a href="register">Kayıt olmak için tıkla!!</a></h6>
+	</div>
+	
+	<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+	<script src="webjars/popper.js/1.12.5/dist/umd/popper.min.js"></script>
+	<script type="text/javascript" src="webjars/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+</body>
+</html>

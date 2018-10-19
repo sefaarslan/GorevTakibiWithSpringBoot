@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot Thymeleaf Example - Register Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+
+<link rel="stylesheet" th:href="@{/css/main.css}"
+	href="../../css/main.css" />
+
+</head>
+<body>
+
+	<div class="container">
+		<form id="my-form" th:action="@{/register}" th:object="${user}" method="POST"> 
+		<div class="form-row">         
+		          <div class="form-group">
+            <fieldset>
+                <legend>Register</legend>
+                <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="alert alert-danger"></div>
+                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger"></div>
+                <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="alert alert-danger"></div>                
+                <div th:if="${param.error}" class="alert alert-danger">    
+                    Username exists.
+                </div>
+                <label for="username">Kullanıcı Adı :</label>
+                <input type="text" th:field="*{username}" id="username" name="username" autofocus="autofocus"/> 
+                <label for="email">E-mail Adresi :</label>
+                <input type="text" th:field="*{email}" id="email" name="email"/>            
+                <label for="password">Parola :</label>
+                <input type="password" th:field="*{password}" id="password" name="password"/>    
+                
+							<button style="color:white; background-color:green" class="btn btn-primary" id="userFormButton"
+								type="submit">Kaydol
+							</button>
+								
+								 <a th:href="@{/}" style="color:white; background-color:red" class="btn btn-primary">Vazgeç</a>
+						
+            </fieldset>
+            </div>
+            </div>
+        </form>
+            <h6><a href="login">Giriş ekranı için tıkla !!</a></h6> 
+        </div>
+         
+    
+        
+
+
+	<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+	<script src="webjars/popper.js/1.12.5/dist/umd/popper.min.js"></script>
+	<script type="text/javascript"
+		src="webjars/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+</body>
+</html>
