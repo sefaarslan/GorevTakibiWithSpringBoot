@@ -1,8 +1,8 @@
-#Uygulamanın Amacı:
+# Uygulamanın Amacı:
 
 Kişilerin kendilerine görevler atayabilecek atadığı görevleri takip edebileceği bir web uygulaması olacaktır.
 
-#İsterler
+# İsterler
 
 Sistemde 2 rol olacaktır.(ADMIN, STANDART_USER)
 
