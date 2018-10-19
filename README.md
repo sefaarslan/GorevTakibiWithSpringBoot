@@ -14,4 +14,4 @@ Admin rolündeki kullanıcı sistemdeki kullanıcıları görevlerini görebilec
 
 #Projeden Birkaç Ekran Görüntüsü
 
-bit.ly/2CsAo9Sbit.ly
+http://bit.ly/2CsAo9S
